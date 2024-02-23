@@ -20,7 +20,7 @@ AUTH = Auth()
 @app.route("/", methods=["GET"], strict_slashes=False)
 def index() -> str:
     """
-    Return json respomse
+    Returning json respomse
     {"message": "Bienvenue"}
     """
     return jsonify({"message": "Bienvenue"})
@@ -75,7 +75,7 @@ def logout():
 @app.route("/profile", methods=["GET"], strict_slashes=False)
 def profile() -> str:
     """
-    Return a user's email based on session_id in the received cookies
+    Returning a user's email based on session_id in the received cookies
     """
     session_id = request.cookies.get("session_id")
     user = AUTH.get_user_from_session_id(session_id)
